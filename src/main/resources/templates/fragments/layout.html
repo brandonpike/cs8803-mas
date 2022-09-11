@@ -1,0 +1,40 @@
+<!doctype html>
+<html th:fragment="layout (template, menu)">
+<head>
+    <title>Java Getting Started on Heroku</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+                </li>
+                <li>
+                    <a href="/hello"><span class="glyphicon glyphicon-user"></span> HelloPage</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Endpoints <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="divider"></li>
+						<li><a href="/test/with_body">/test/with_body</a></li>
+						<li><a href="/test/without_body">/test/without_body</a></li>
+						<li><a href="/hello2">/hello2</a></li>
+						<li><a href="/hello3">/hello3</a></li>
+						<li><a href="/hello4">/hello4</a></li>
+                        <li><a href="/hello5">/hello5</a></li>
+                        <li><a href="/data/retrieve">/data/retrieve</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div th:replace="${template}"/>
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
