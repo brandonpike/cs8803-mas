@@ -104,7 +104,8 @@ public class ReqController {
       list.add(1);
       list.add(2);
       list.add(3);
-      map.put("userID", list);
+      map.put("Format=", "<username>: <movieList>");
+      map.put("brandonpike", list);
       return map;
   }
 
