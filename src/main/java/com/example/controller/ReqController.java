@@ -98,11 +98,17 @@ public class ReqController {
   }
 
   @RequestMapping(value="/data/retrieve")
-  public Map<String,String> getData() {
-      return getParse();
+  public Map<String,Object> getData() {
+      Map<String,Object> map = new HashMap<String,Object>();
+      ArrayList<Integer> list = new ArrayList<Integer>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      map.put("userID", list);
+      return map;
   }
 
-  private Map<String, String> getParse() {
+  private Map<String, String> getFacebook() {
       Map<String,String> map = new HashMap<String,String>();
       try {
         URL url = new URL("https://www.instagram.com/brandonpike/?hl=en");
